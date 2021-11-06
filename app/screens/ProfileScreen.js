@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity} from 'react-native';
 
 //import {render} from "react-dom";
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -7,95 +7,70 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 //import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 function ProfileScreen() {
     return (
-        <SafeAreaView 
-            //background styling
-            style={{
-                backgroundColor: "#fff",
-                flex: 1,
-                fontFamily: "Arial",
-            }}>
+        //bg styling
+        <SafeAreaView style={styles.container}>
 
-                {/* nav bar */}
-                <View style={{
-                    backgroundColor: "white",
-                    flex: .2,
-                    justifyContent: 'center',            
-                }}>
-                    <Text style={{textAlign: 'center'}}> Profile </Text>
-                </View>
+            {/* Header bar */}
+            <View style={styles.header}>
+                <Text style={styles.headerText}>John Doe</Text>
+            </View>
 
-                {/* header */}
-                <View style={{
-                    backgroundColor: "white",
-                    flex: .5,
-                    flexDirection: "row",
-                    marginLeft: 40,
-                    marginRight: 40,
-                    justifyContent: 'center',
-                    alignItems: 'center'
-                }}>
+            {/* Book an appointment */}
+            <TouchableOpacity
+                style={styles.SubmitButtonStyle}
+                activeOpacity = { .5 }
+            >
+                <Text style={styles.whiteText25}>Book an appointment</Text>
+            </TouchableOpacity>
+            <Text style={styles.purpleText16}>Last Appointment: September 5, 2021</Text>
 
-                    {/* profile */}
-                    <View style={{
-                        flex:1,
-                        alignItems: 'center',
-                    }}>
-                        {<Icon
-                            name = "user"
-                            size = {40}
-                        /> }
-                        <Text> John Doe </Text>
-                        <Text style = {{fontSize: 10}}> San Francisco </Text>
-                    </View>
-
-                    {/* book apt container */}
-                    <View style={{
-                        flex: 2.5,
-                        alignItems: 'center',
-                    }}>
-                        <View style={{
-                            backgroundColor: "dodgerblue",
-                            borderRadius: 25,
-                            }}>
-                            <Text style={{
-                                color: "white", 
-                                paddingTop: 12
-                            }} > Book an Appointment {"\n"}</Text>
-                        </View>
-                    </View>
-                </View>
-                <View style={{
-                    backgroundColor: "#F1F9FF",
-                    flex: .4,
-                    marginBottom: 20,
-                    justifyContent: 'center',            
-                }}>
-                    <Text style={styles.titleText}> Last Appointment: November 3, 2020 </Text>
-                </View>
-                <View style={styles.roundedRectangle}>
-                    <Text style={styles.titleText}> My Current Medications </Text>
-                    <Text style={{color: "black", fontWeight: "bold", textAlign: "center", marginTop: 30, fontSize: 15,borderColor: "black", borderWidth: 2}}> Levothyroxine </Text>
-                </View>
-                <View style={styles.roundedRectangle}>
-                    <Text style={styles.titleText}> My Physicians </Text>
-                    {<Icon style={{
-                        marginTop: 50,
-                    }}
-                        name = "user"
-                        size = {40}
-                    /> }
-                    <Text style={{color: "black", fontWeight: "bold", textAlign: "center", paddingTop: 10, fontSize: 10 }}> Dr.Doctor </Text>
-                </View>
-                <View style={styles.roundedRectangle}>
-                    <Text style={styles.titleText}> My Old Medications </Text>
-                </View>
+            {/* Current Medications */}
         </SafeAreaView>
     );
 }
 
 export default ProfileScreen;
-
+const COLORS = {
+    purple: '#4E30ED',
+  };
+const containerStyle = { backgroundColor: "orange"};   
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: "#FAFAFA",
+        fontFamily: "Arial",
+    },
+    header: {
+        justifyContent: 'center',     
+    },
+    headerText: {
+        marginTop: 16,
+        fontSize: 25,
+        textAlign: 'center',
+        fontWeight: "bold", 
+        color: "black",    
+    },
+    whiteText25: {
+        fontSize: 25,
+        textAlign: 'center',
+        color: "white",
+    },
+    purpleText16: {
+        fontSize: 16,
+        marginBottom: 24,
+        textAlign: 'center',
+        color: COLORS.purple,
+    },
+    SubmitButtonStyle: {
+        marginTop: 24,
+        marginBottom: 4, 
+        paddingTop:8,
+        paddingBottom:8,
+        marginRight: 16,
+        marginLeft: 16,
+        backgroundColor: COLORS.purple,
+        borderRadius:15,
+      },
+    
     roundedRectangle: {
         backgroundColor: "#F1F9FF",
         flex: 1,
