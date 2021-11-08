@@ -63,6 +63,22 @@ function RemindersScreen() {
                     style={styles.medCard}
                     activeOpacity = { .5 }
                 >
+                    <View style={styles.innerMedContainer}>  
+                        {/* left side */}
+                        <View style={{flex: 3, alignItems: 'center', justifyContent: 'center'}}>
+                            <Text>PILL</Text>
+                        </View>
+                        {/* right side */}
+                        <View style={{flex: 7, flexDirection: 'column'}}>   
+                            <View>                                
+                                <Text style={styles.medCardTitle}>Advil</Text>
+                            </View>         
+                            <View style={{flexDirection: 'row', marginTop: 8}}>
+                                <Text style={[styles.medCardIcons, {marginLeft: 0}]}>Place holder Icon</Text>
+                                <Text style={styles.medCardIcons}>Place holder Icon</Text>
+                            </View>                
+                        </View>
+                    </View>
                 </TouchableOpacity>
             </View>
 

@@ -86,8 +86,8 @@ export default StyleSheet.create({
     medCard: {
         marginTop: 16,
         marginBottom: 16, 
-        paddingTop: 48,
-        paddingBottom: 48,
+        paddingTop: 8,
+        paddingBottom: 8,
         marginRight: 16,
         marginLeft: 16,
         backgroundColor: 'white',
@@ -103,7 +103,17 @@ export default StyleSheet.create({
         shadowRadius: 11,
       },
       medCardContainer: {
-          marginTop: 16,
-
+        marginTop: 16,
       },
+      innerMedContainer: { 
+        flex: 10,
+        flexDirection: "row",
+      },
+      medCardTitle: {
+          fontSize: 24,
+      },
+      medCardIcons: {
+          marginRight: 8,
+          marginLeft: 8,
+      }
 });
