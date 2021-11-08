@@ -3,9 +3,10 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import ProfileScreen from './app/screens/ProfileScreen';
 import SearchScreen from './app/screens/SearchScreen';
+import RemindersScreen from './app/screens/RemindersScreen';
 
 export default function App() {
-  return <ProfileScreen />;
+  return <RemindersScreen />;
 }
 
 const styles = StyleSheet.create({
