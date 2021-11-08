@@ -2,10 +2,6 @@ import React from 'react';
 import { StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity} from 'react-native';
 import styles from './Styles.js'
 
-//import {render} from "react-dom";
-import Icon from 'react-native-vector-icons/FontAwesome5'
-//import { faHome } from "@fortawesome/free-solid-svg-icons";
-//import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 function ProfileScreen() {
     return (
         //bg styling
@@ -30,8 +26,5 @@ function ProfileScreen() {
     );
 }
 
-export default ProfileScreen;
-const COLORS = {
-    purple: '#4E30ED',
-  };
-const containerStyle = { backgroundColor: "orange"};   
+export default ProfileScreen;   
+

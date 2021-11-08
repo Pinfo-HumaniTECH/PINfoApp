@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native';
+import { COLORS } from './Colors.js'
+import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 
-const COLORS = {
-    purple: '#4E30ED',
-  };
-const containerStyle = { backgroundColor: "orange"};  
+
 
 export default StyleSheet.create({
     container: {
@@ -58,4 +57,18 @@ export default StyleSheet.create({
         paddingTop: 10, 
         fontSize: 18,
     },
+    roundButton: { 
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    backgroundColor: COLORS.mediumGray,
+    marginLeft: 12,
+    },
+    
+    calendarNums: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: RFPercentage(3),
+    }
 });
