@@ -1,8 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { COLORS } from './Colors.js'
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-
-
+const circleSpacing = 6;
 
 export default StyleSheet.create({
     container: {
@@ -63,12 +62,48 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: 100,
     backgroundColor: COLORS.mediumGray,
-    marginLeft: 12,
+    marginLeft: circleSpacing,
+    marginRight: circleSpacing,
     },
-    
+
     calendarNums: {
         textAlign: 'center',
         color: 'white',
-        fontSize: RFPercentage(3),
-    }
+        fontSize: RFPercentage(2),
+    },
+    todayText: { 
+        marginTop: 4,
+        fontSize: RFPercentage(2.3),
+        textAlign: 'center',
+        color: COLORS.purple,
+    },
+    calendarContainer: {
+        flexDirection: "row",
+        marginTop: 16,
+        marginLeft: circleSpacing,
+        marginRight: circleSpacing,
+      },
+    medCard: {
+        marginTop: 16,
+        marginBottom: 16, 
+        paddingTop: 48,
+        paddingBottom: 48,
+        marginRight: 16,
+        marginLeft: 16,
+        backgroundColor: 'white',
+        borderRadius:15,
+        borderWidth: 5,
+        borderColor: COLORS.purple,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 6,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 11,
+      },
+      medCardContainer: {
+          marginTop: 16,
+
+      },
 });
