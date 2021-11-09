@@ -106,7 +106,6 @@ export default StyleSheet.create({
         marginTop: 16,
       },
       innerMedContainer: { 
-        flex: 10,
         flexDirection: "row",
       },
       medCardTitle: {

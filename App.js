@@ -4,18 +4,21 @@ import { StyleSheet, Text, View } from 'react-native';
 import ProfileScreen from './app/screens/ProfileScreen';
 import SearchScreen from './app/screens/SearchScreen';
 import RemindersScreen from './app/screens/RemindersScreen';
+import TodayScreen from './app/screens/TodayScreen';
 import Colors from './app/screens/Colors';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { COLORS } from './app/screens/Colors';
 
 const Tab = createBottomTabNavigator();
+const navTheme = DefaultTheme;
+navTheme.colors.background = '#FAFAFA';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={navTheme}>
       <Tab.Navigator
       screenOptions = {({ route }) => ({
         headerShown: false,
@@ -34,7 +37,7 @@ export default function App() {
           return <Ionicons name = {iconName} size = {size} color = {color}/>;
         },
       })}>
-        <Tab.Screen name = "Today" component = {RemindersScreen} />
+        <Tab.Screen name = "Today" component = {TodayScreen} />
         <Tab.Screen name = "Reminders" component={RemindersScreen} />
         <Tab.Screen name = "Search" component = {SearchScreen} />
         <Tab.Screen name = "Profile" component = {ProfileScreen} />
