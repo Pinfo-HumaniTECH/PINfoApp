@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity, useWindowDimensions} from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { COLORS } from './Colors.js'
 import styles from './Styles.js'
+import Feather from 'react-native-vector-icons/Feather'
 
 function RemindersScreen() {
     
@@ -66,7 +68,10 @@ function RemindersScreen() {
                     <View style={styles.innerMedContainer}>  
                         {/* left side */}
                         <View style={{flex: 3, alignItems: 'center', justifyContent: 'center'}}>
-                            <Text>PILL</Text>
+                            <FontAwesome5
+                            color = 'pink'
+                            size = '40'
+                            name = 'capsules'/>
                         </View>
                         {/* right side */}
                         <View style={{flex: 7, flexDirection: 'column'}}>   
@@ -74,8 +79,14 @@ function RemindersScreen() {
                                 <Text style={styles.medCardTitle}>Advil</Text>
                             </View>         
                             <View style={{flexDirection: 'row', marginTop: 8}}>
-                                <Text style={[styles.medCardIcons, {marginLeft: 0}]}>Place holder Icon</Text>
-                                <Text style={styles.medCardIcons}>Place holder Icon</Text>
+                                <Feather
+                                size = '20'
+                                name = 'sunset' />
+                                <Text style={styles.medCardIcons}> 1 </Text>
+                                <Feather
+                                size = '20'
+                                name = 'sunrise' />
+                                <Text style={styles.medCardIcons}> 1 </Text>
                             </View>                
                         </View>
                     </View>
