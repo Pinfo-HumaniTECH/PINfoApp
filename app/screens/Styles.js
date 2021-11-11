@@ -153,5 +153,12 @@ export default StyleSheet.create({
       medCardIcons: {
           marginRight: 8,
           marginLeft: 8,
+      },
+      alarmText: {
+        marginBottom: -15, 
+        textAlign: 'left', 
+        marginLeft: 40, 
+        fontWeight: 'bold', 
+        fontSize: 25,
       }
 });

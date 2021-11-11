@@ -63,6 +63,7 @@ function RemindersScreen() {
 
             {/* ADVIL TAKEN */}
              {/* bottom tab */}
+             <Text style={[styles.alarmText, {marginTop: 20}]}>8:00 AM</Text>
              <View style={{marginTop: 30}}>
                 <TouchableOpacity
                     style={styles.medCardShadowGreen}
@@ -97,6 +98,8 @@ function RemindersScreen() {
 
             {/* ADVIL NOT TAKEN */}
             {/* bottom tab */}
+            
+            <Text style={{marginBottom: 15, textAlign: 'left', marginLeft: 40, fontWeight: 'bold', fontSize: 25,}}>10:30 AM</Text>
             <View>
                 <TouchableOpacity
                     style={styles.medCardShadowGray}
