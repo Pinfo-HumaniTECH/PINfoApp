@@ -4,7 +4,6 @@ import { StyleSheet, Text, View } from 'react-native';
 import ProfileScreen from './app/screens/ProfileScreen';
 import SearchScreen from './app/screens/SearchScreen';
 import RemindersScreen from './app/screens/RemindersScreen';
-import TodayScreen from './app/screens/TodayScreen';
 import Colors from './app/screens/Colors';
 
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
@@ -25,9 +24,7 @@ export default function App() {
         tabBarActiveTintColor: COLORS.purple,
         tabBarIcon: ({focused, color, size}) => {
           let iconName;
-          if (route.name == 'Today') {
-            iconName = focused ? 'calendar' : 'calendar-outline';
-          } else if (route.name == 'Reminders') {
+          if (route.name == 'Reminders') {
             iconName = focused ? 'notifications' : 'notifications-outline';
           } else if (route.name == 'Search') {
             iconName = focused ? 'search' : 'search-outline';
@@ -37,7 +34,6 @@ export default function App() {
           return <Ionicons name = {iconName} size = {size} color = {color}/>;
         },
       })}>
-        <Tab.Screen name = "Today" component = {TodayScreen} />
         <Tab.Screen name = "Reminders" component={RemindersScreen} />
         <Tab.Screen name = "Search" component = {SearchScreen} />
         <Tab.Screen name = "Profile" component = {ProfileScreen} />

@@ -60,34 +60,70 @@ function RemindersScreen() {
             </View>
 
             {/* Medication cards */}
+
+            {/* ADVIL TAKEN */}
+             {/* bottom tab */}
+             <View style={{marginTop: 30}}>
+                <TouchableOpacity
+                    style={styles.medCardShadowGreen}
+                    activeOpacity = { .5 }
+                >
+                    <Text style={{color: 'white', textAlign: 'center', marginTop: 30}}>Taken!</Text>
+                  
+                </TouchableOpacity>
+            </View>
+            {/* content */}
             <View style={styles.medCardContainer}>
                 <TouchableOpacity
-                    style={styles.medCard}
+                    style={styles.medCardGreen}
                     activeOpacity = { .5 }
                 >
                     <View style={styles.innerMedContainer}>  
                         {/* left side */}
-                        <View style={{flex: 3, alignItems: 'center', justifyContent: 'center'}}>
-                            <FontAwesome5
-                            color = 'pink'
-                            size = '40'
-                            name = 'capsules'/>
+                        <View style={{flex: 1, flexDirection: 'column'}}>
+                            <View style={{marginLeft: 24}}>
+                                <Text style={{fontSize: 30}}>Advil</Text>
+                                <Text style={{fontSize: 16}}>With food</Text>
+                            </View>
                         </View>
                         {/* right side */}
-                        <View style={{flex: 7, flexDirection: 'column'}}>   
-                            <View>                                
-                                <Text style={styles.medCardTitle}>Advil</Text>
-                            </View>         
-                            <View style={{flexDirection: 'row', marginTop: 8}}>
-                                <Feather
-                                size = '20'
-                                name = 'sunset' />
-                                <Text style={styles.medCardIcons}> 1 </Text>
-                                <Feather
-                                size = '20'
-                                name = 'sunrise' />
-                                <Text style={styles.medCardIcons}> 1 </Text>
-                            </View>                
+                        <View style={{flex: 1.5, flexDirection: 'row', marginRight: 16, alignContent: 'center', justifyContent: 'center'}}>                                                      
+                            <Text style={{fontSize: 20, margin: 'auto'}}>PILL ICON</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4}}>x 2</Text>
+                        </View>
+                    </View>
+                </TouchableOpacity>
+            </View>
+
+            {/* ADVIL NOT TAKEN */}
+            {/* bottom tab */}
+            <View>
+                <TouchableOpacity
+                    style={styles.medCardShadowGray}
+                    activeOpacity = { .5 }
+                >
+                    <Text style={{color: 'white', textAlign: 'center', marginTop: 30}}>Not taken</Text>
+                  
+                </TouchableOpacity>
+            </View>
+            {/* content */}
+            <View style={styles.medCardContainer}>
+                <TouchableOpacity
+                    style={styles.medCardGray}
+                    activeOpacity = { .5 }
+                >
+                    <View style={styles.innerMedContainer}>  
+                        {/* left side */}
+                        <View style={{flex: 1, flexDirection: 'column'}}>
+                            <View style={{marginLeft: 24}}>
+                                <Text style={{fontSize: 30}}>Crestor</Text>
+                                <Text style={{fontSize: 16}}>Before food</Text>
+                            </View>
+                        </View>
+                        {/* right side */}
+                        <View style={{flex: 1.5, flexDirection: 'row', marginRight: 16, alignContent: 'center', justifyContent: 'center'}}>                                                      
+                            <Text style={{fontSize: 20, margin: 'auto'}}>PILL ICON</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4}}>x 2</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
