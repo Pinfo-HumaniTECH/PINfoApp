@@ -12,6 +12,8 @@ function RemindersScreen() {
     const circleWidth = Math.round((window.width - (spacing * 16)) / 7);
     var date = new Date().getDate(); //Current Date
     var month = new Date().getMonth() + 1; //Current Month
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+    "October", "November", "December"]
     var year = new Date().getFullYear(); //Current Year
     var hours = new Date().getHours(); //Current Hours
     var min = new Date().getMinutes(); //Current Minutes
@@ -19,10 +21,7 @@ function RemindersScreen() {
     const daysOfWeek = [date-3, date-2, date-1, date, date+1, date+2, date+3];
     const dayButtons = [];
     const currentDate = date
-    // const [setCurrentDate] = useState('');
-    // useEffect(() => {
 
-    //   });
     //for each day of week, populate circles
     daysOfWeek.forEach((day) => {
 
@@ -61,6 +60,10 @@ function RemindersScreen() {
             {/* Header bar */}
             <View style={styles.header}>
                 <Text style={styles.headerText}>Reminders</Text>
+            </View>
+
+            <View style={styles.header}>
+                <Text style={styles.headerText}>{months[month-1]}</Text>
             </View> 
 
             {/* Container for days of week */}
