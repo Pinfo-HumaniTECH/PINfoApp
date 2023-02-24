@@ -7,13 +7,22 @@ import Feather from 'react-native-vector-icons/Feather'
 
 function RemindersScreen() {
     
-    const window = useWindowDimensions  ();
+    const window = useWindowDimensions();
     const spacing = 6;
     const circleWidth = Math.round((window.width - (spacing * 16)) / 7);
-    const daysOfWeek = ["08", "09", "10", "11", "12", "13", "14"];
+    var date = new Date().getDate(); //Current Date
+    var month = new Date().getMonth() + 1; //Current Month
+    var year = new Date().getFullYear(); //Current Year
+    var hours = new Date().getHours(); //Current Hours
+    var min = new Date().getMinutes(); //Current Minutes
+    var sec = new Date().getSeconds(); //Current Seconds
+    const daysOfWeek = [date-3, date-2, date-1, date, date+1, date+2, date+3];
     const dayButtons = [];
-    const currentDate = "11"
+    const currentDate = date
+    // const [setCurrentDate] = useState('');
+    // useEffect(() => {
 
+    //   });
     //for each day of week, populate circles
     daysOfWeek.forEach((day) => {
 
