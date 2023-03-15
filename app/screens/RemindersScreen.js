@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { CheckBox, StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity, useWindowDimensions} from 'react-native';
+import { CheckBox, StyleSheet, View, Text, SafeAreaView, ScrollView, Button, TouchableHighlight, TouchableOpacity, useWindowDimensions} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { COLORS } from './Colors.js'
 import styles from './Styles.js'
@@ -57,7 +57,7 @@ function RemindersScreen() {
     return (
         
         //bg styling
-        <SafeAreaView style={styles.container}>
+        <ScrollView style={styles.container}>
 
             {/* Header bar */}
             <View style={styles.header}>
@@ -151,7 +151,7 @@ function RemindersScreen() {
 
             
 
-        </SafeAreaView>
+        </ScrollView>
     );
 }
 
