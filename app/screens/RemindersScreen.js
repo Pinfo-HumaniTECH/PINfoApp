@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity, useWindowDimensions} from 'react-native';
+import React, {useState} from 'react';
+import { CheckBox, StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity, useWindowDimensions} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { COLORS } from './Colors.js'
 import styles from './Styles.js'
@@ -21,6 +21,7 @@ function RemindersScreen() {
     const daysOfWeek = [date-3, date-2, date-1, date, date+1, date+2, date+3];
     const dayButtons = [];
     const currentDate = date
+    const [isSelected, setSelection] = useState(false);
 
     //for each day of week, populate circles
     daysOfWeek.forEach((day) => {
@@ -78,17 +79,18 @@ function RemindersScreen() {
              <Text style={[styles.alarmText, {marginTop: 20}]}>8:00 AM</Text>
              <View style={{marginTop: 30}}>
                 <TouchableOpacity
-                    style={styles.medCardShadowGreen}
-                    activeOpacity = { .5 }
-                >
-                    <Text style={{color: 'white', textAlign: 'center', marginTop: 30}}>Taken!</Text>
+                    style={isSelected ? styles.medCardShadowGreen : styles.medCardShadowGray}
+                    activeOpacity = { .5 }>
+                    <Text style={{color: 'white', textAlign: 'center', marginTop: 30}}>
+                    {isSelected ? 'Taken!' : 'Not Taken!'}
+                    </Text>
                   
                 </TouchableOpacity>
             </View>
             {/* content */}
             <View style={styles.medCardContainer}>
                 <TouchableOpacity
-                    style={styles.medCardGreen}
+                    style={isSelected ? styles.medCardGreen : styles.medCardGray}
                     activeOpacity = { .5 }
                 >
                     <View style={styles.innerMedContainer}>  
@@ -103,6 +105,7 @@ function RemindersScreen() {
                         <View style={{flex: 1.5, flexDirection: 'row', marginRight: 16, alignContent: 'center', justifyContent: 'center'}}>                                                      
                             <Text style={{fontSize: 20, margin: 'auto'}}>PILL ICON</Text>
                             <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4}}>x 2</Text>
+                            <CheckBox value={isSelected} onValueChange={setSelection} style={styles.checkbox}/>
                         </View>
                     </View>
                 </TouchableOpacity>

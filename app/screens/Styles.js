@@ -160,5 +160,14 @@ export default StyleSheet.create({
         marginLeft: 40, 
         fontWeight: 'bold', 
         fontSize: 25,
+      },
+      checkboxContainer: {
+        flexDirection: 'row',
+        marginBottom: 20,
+      },
+      checkbox: {
+        alignSelf: 'center',
+        width: 50,
+        height: 50
       }
 });
