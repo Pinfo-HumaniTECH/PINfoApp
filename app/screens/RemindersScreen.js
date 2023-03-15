@@ -22,6 +22,7 @@ function RemindersScreen() {
     const dayButtons = [];
     const currentDate = date
     const [isSelected, setSelection] = useState(false);
+    const [isSelected2, setSelection2] = useState(false);
 
     //for each day of week, populate circles
     daysOfWeek.forEach((day) => {
@@ -104,7 +105,7 @@ function RemindersScreen() {
                         {/* right side */}
                         <View style={{flex: 1.5, flexDirection: 'row', marginRight: 16, alignContent: 'center', justifyContent: 'center'}}>                                                      
                             <Text style={{fontSize: 20, margin: 'auto'}}>PILL ICON</Text>
-                            <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4}}>x 2</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4, marginRight: 20}}>x 2</Text>
                             <CheckBox value={isSelected} onValueChange={setSelection} style={styles.checkbox}/>
                         </View>
                     </View>
@@ -117,17 +118,17 @@ function RemindersScreen() {
             <Text style={{marginBottom: 15, textAlign: 'left', marginLeft: 40, fontWeight: 'bold', fontSize: 25,}}>10:30 AM</Text>
             <View>
                 <TouchableOpacity
-                    style={styles.medCardShadowGray}
-                    activeOpacity = { .5 }
-                >
-                    <Text style={{color: 'white', textAlign: 'center', marginTop: 30}}>Not taken</Text>
-                  
+                    style={isSelected2 ? styles.medCardShadowGreen : styles.medCardShadowGray}
+                    activeOpacity = { .5 }>
+                    <Text style={{color: 'white', textAlign: 'center', marginTop: 30}}>
+                    {isSelected2 ? 'Taken!' : 'Not Taken!'}
+                    </Text>
                 </TouchableOpacity>
             </View>
             {/* content */}
             <View style={styles.medCardContainer}>
                 <TouchableOpacity
-                    style={styles.medCardGray}
+                    style={isSelected2 ? styles.medCardGreen : styles.medCardGray}
                     activeOpacity = { .5 }
                 >
                     <View style={styles.innerMedContainer}>  
@@ -141,7 +142,8 @@ function RemindersScreen() {
                         {/* right side */}
                         <View style={{flex: 1.5, flexDirection: 'row', marginRight: 16, alignContent: 'center', justifyContent: 'center'}}>                                                      
                             <Text style={{fontSize: 20, margin: 'auto'}}>PILL ICON</Text>
-                            <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4}}>x 2</Text>
+                            <Text style={{fontWeight: 'bold', fontSize: 35, marginTop: 4, marginRight: 20}}>x 2</Text>
+                            <CheckBox value={isSelected2} onValueChange={setSelection2} style={styles.checkbox}/>
                         </View>
                     </View>
                 </TouchableOpacity>
