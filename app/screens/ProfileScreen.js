@@ -10,6 +10,7 @@ function ProfileScreen() {
             {/* Header bar */}
             <View style={styles.header}>
                 <Text style={styles.headerText}>John Doe</Text>
+                <Text style={styles.headerText}>Allergies: None</Text>
             </View>
 
             {/* Book an appointment */}

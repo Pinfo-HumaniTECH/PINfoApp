@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import ProfileScreen from './app/screens/ProfileScreen';
 import SearchScreen from './app/screens/SearchScreen';
 import RemindersScreen from './app/screens/RemindersScreen';
+import MedicationScreen from './app/screens/MedicationScreen';
 import Colors from './app/screens/Colors';
 
 import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
@@ -30,12 +31,16 @@ export default function App() {
             iconName = focused ? 'search' : 'search-outline';
           } else if (route.name == 'Profile') {
             iconName = focused ? 'person' : 'person-outline';
+          } 
+          else if (route.name == 'Medication') {
+            iconName = focused ? 'person' : 'person-outline';
           }
           return <Ionicons name = {iconName} size = {size} color = {color}/>;
         },
       })}>
         <Tab.Screen name = "Reminders" component={RemindersScreen} />
         <Tab.Screen name = "Search" component = {SearchScreen} />
+        <Tab.Screen name = "Medication" component = {MedicationScreen} />
         <Tab.Screen name = "Profile" component = {ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>

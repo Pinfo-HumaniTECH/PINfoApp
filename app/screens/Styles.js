@@ -169,5 +169,9 @@ export default StyleSheet.create({
         alignSelf: 'center',
         width: 50,
         height: 50
+      },
+      screenTitle: {
+        backgroundColor: "#3476EB",
+        height: 75
       }
 });
