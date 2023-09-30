@@ -173,5 +173,15 @@ export default StyleSheet.create({
       screenTitle: {
         backgroundColor: "#3476EB",
         height: 75
+      }, 
+      card: {
+        height: '100px',
+        // marginTop: '25px',
+        paddingTop: '20px',
+        position: 'relative',
+        top: '50px',
+        left:'25%',
+        width: '50%',
+        justifyContent: 'center'
       }
 });

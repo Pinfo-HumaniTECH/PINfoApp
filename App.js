@@ -33,7 +33,7 @@ export default function App() {
             iconName = focused ? 'person' : 'person-outline';
           } 
           else if (route.name == 'Medication') {
-            iconName = focused ? 'person' : 'person-outline';
+            iconName = focused ? 'medkit' : 'medkit-outline';
           }
           return <Ionicons name = {iconName} size = {size} color = {color}/>;
         },
