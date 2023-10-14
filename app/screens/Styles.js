@@ -23,11 +23,11 @@ export default StyleSheet.create({
         textAlign: 'center',
         color: "white",
     },
-    purpleText16: {
+    blueText16: {
         fontSize: 16,
         marginBottom: 24,
         textAlign: 'center',
-        color: COLORS.purple,
+        color: COLORS.blue,
     },
     SubmitButtonStyle: {
         marginTop: 24,
@@ -36,10 +36,20 @@ export default StyleSheet.create({
         paddingBottom:8,
         marginRight: 16,
         marginLeft: 16,
-        backgroundColor: COLORS.purple,
+        backgroundColor: COLORS.blue,
         borderRadius:15,
       },
-    
+      SubmitButtonMed: {
+        width: 200,
+        marginTop: 250,
+        marginBottom: 4, 
+        paddingTop:8,
+        paddingBottom:8,
+        marginRight: 16,
+        marginLeft: 525,
+        backgroundColor: COLORS.blue,
+        borderRadius:15,
+      },
     roundedRectangle: {
         backgroundColor: "#F1F9FF",
         flex: 1,
@@ -75,7 +85,7 @@ export default StyleSheet.create({
         marginTop: 4,
         fontSize: RFPercentage(2.3),
         textAlign: 'center',
-        color: COLORS.purple,
+        color: COLORS.blue,
     },  
     calendarContainer: {
         flexDirection: "row",
@@ -182,6 +192,17 @@ export default StyleSheet.create({
         top: '50px',
         left:'25%',
         width: '50%',
-        justifyContent: 'center'
+        justifyContent: 'center',
+      },
+      cardDiv: {
+        borderWidth:1,
+        overflow: 'hidden',
+        shadowRadius: 10,
+        shadowOpacity: 1,
+        borderRadius:15, 
+        padding: 50, 
+        width: 500, 
+        marginLeft: 300, 
+        marginTop: 50
       }
 });

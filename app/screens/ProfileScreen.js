@@ -20,7 +20,7 @@ function ProfileScreen() {
             >
                 <Text style={styles.whiteText25}>Book an appointment</Text>
             </TouchableOpacity>
-            <Text style={styles.purpleText16}>Last Appointment: September 5, 2021</Text>
+            <Text style={styles.blueText16}>Last Appointment: September 5, 2021</Text>
 
             {/* Current Medications */}
         </SafeAreaView>
