@@ -50,6 +50,17 @@ export default StyleSheet.create({
         backgroundColor: COLORS.blue,
         borderRadius:15,
       },
+      SubmitButtonSmall: {
+        width: 200,
+        marginBottom: 4, 
+        paddingTop:8,
+        paddingBottom:8,
+        marginRight: 16,
+        marginLeft: 200,
+        backgroundColor: COLORS.blue,
+        borderRadius:15,
+        text: COLORS.white
+      },
     roundedRectangle: {
         backgroundColor: "#F1F9FF",
         flex: 1,
@@ -204,5 +215,11 @@ export default StyleSheet.create({
         width: 500, 
         marginLeft: 300, 
         marginTop: 50
+      },
+      input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
       }
 });
