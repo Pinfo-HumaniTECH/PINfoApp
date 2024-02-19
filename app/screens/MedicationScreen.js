@@ -12,7 +12,9 @@ class MedicationScreen extends React.Component {
     state = {
         modalVisible: false,
         name: 'Medication Name',
-        info: 'Medication Info'
+        info: 'Medication Info',
+        img: './pillIcon.png',
+        imageLoad: true
       };
 
     updateSearch = (search) => {
@@ -32,6 +34,10 @@ class MedicationScreen extends React.Component {
 
     save = (name, info) => {
         alert('name: ' + name + ' info: ' + info);
+        if (name === 'Bisacodyl' || name === 'bisacodyl' ) {
+            this.setState({imageLoad: false})
+            this.setState({img: './Bisabodyl.png'})
+        }
      }
     render() {        
         // const [text, onChangeText] = React.useState('Useless Text');
@@ -50,7 +56,6 @@ class MedicationScreen extends React.Component {
             <View style={styles.card}>       
                 <Card>
                 <Image style={{height: '50px', width: '50px', position: 'relative', left: '45%'}}source={require('./pillIcon.png')} />
-
       <TextInput style = {styles.input}
                placeholder = "Insert Medicine Name"
                onChangeText = {this.onChangeText}/>
@@ -89,10 +94,11 @@ class MedicationScreen extends React.Component {
                     </div> */}
                 <View style={styles.card}>       
                 <Card>
-                <Image style={{height: '50px', width: '50px', position: 'relative', left: '45%'}}source={require('./pillIcon.png')} />
+                {this.state.imageLoad && <Image style={{height: '50px', width: '50px', position: 'relative', left: '45%'}}source={require('./pillIcon.png')} />}
           <Card.Title>{this.state.name}</Card.Title>
           <Card.Divider />
           <Text>{this.state.info}</Text>
+          {!this.state.imageLoad && <Image style={{height: '275px', width: '200px', position: 'relative', left: '25%'}}source={require('./Bisacodyl.png')} />}
         </Card>
         </View>
         <TouchableOpacity

@@ -1,22 +1,30 @@
 import React from 'react';
 import { SearchBar } from 'react-native-elements';
-import { StyleSheet, View, Text, SafeAreaView, Button, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Image, Text, SafeAreaView, Button, TouchableHighlight, TouchableOpacity } from 'react-native';
+import styles from './Styles.js'
+import MedicationScreen from './MedicationScreen';
 
 
 
 class SearchScreen extends React.Component {
     state = {
         search: '',
+        imageLoad: false
     };
 
     updateSearch = (search) => {
         this.setState({search});
+        if (search === 'Bisacodyl' || search === 'bisacodyl' ) {
+            this.setState({imageLoad: true})
+        } else {
+            this.setState({imageLoad: false})
+        }
     };
     render() {
         const {search} = this.state;
-
+        const medication = new MedicationScreen();
         return (
-            <SafeAreaView style = {{backgroundColor: "#3476EB"}}>
+            <SafeAreaView>
                 <View style={{
                     justifyContent: 'center',            
                 }}>
@@ -27,6 +35,20 @@ class SearchScreen extends React.Component {
                     onChangeText = {this.updateSearch}
                     value = {search}
                 />
+            {this.state.imageLoad && <Image style={{height: '275px', width: '200px', position: 'center', left: '40%'}}source={require('./Bisacodyl.png')} />}
+            {this.state.imageLoad && 
+       <TouchableOpacity
+       style={styles.SubmitButtonSmall}
+       activeOpacity = { .5 }
+       onPress={() => {
+           medication.save(this.state.search, '')
+         }}
+   >
+       <Text>Add Medication</Text>
+   </TouchableOpacity>
+            
+            }
+
             </SafeAreaView>
         );
     }
