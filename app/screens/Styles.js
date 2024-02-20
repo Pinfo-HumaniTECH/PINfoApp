@@ -61,6 +61,15 @@ export default StyleSheet.create({
         borderRadius:15,
         text: COLORS.white
       },
+      SubmitButtonCenter: {
+        width: 200,
+        marginLeft: '40%',
+        textAlign: 'center',
+        alignContent: 'center',
+        backgroundColor: COLORS.blue,
+        borderRadius:15,
+        text: COLORS.white
+      },
     roundedRectangle: {
         backgroundColor: "#F1F9FF",
         flex: 1,

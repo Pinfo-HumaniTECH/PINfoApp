@@ -6,7 +6,11 @@ import styles from './Styles.js'
 // import {Card, Button , Title ,Paragraph } from 'react-native-paper';
 import { Card } from '@rneui/themed';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-
+const medicationImages = {
+    loperamide: require('./Loperamide.png'), 
+    bisacodyl: require('./Bisacodyl.png'), 
+    acetometophin: require('./Acetometophin.png'), 
+  };
 
 class MedicationScreen extends React.Component {
     state = {
@@ -32,13 +36,23 @@ class MedicationScreen extends React.Component {
         this.setState({info: text});
     }
 
+
     save = (name, info) => {
         alert('name: ' + name + ' info: ' + info);
         if (name === 'Bisacodyl' || name === 'bisacodyl' ) {
             this.setState({imageLoad: false})
-            this.setState({img: './Bisabodyl.png'})
+            this.setState({img: medicationImages['bisacodyl']})
+        }
+        if (name === 'Loperamide' || name === 'loperamide' ) {
+            this.setState({imageLoad: false})
+            this.setState({img: medicationImages['loperamide']})
+        }
+        if (name === 'Acetaminophen' || name === 'acetaminophen' ) {
+            this.setState({imageLoad: false})
+            this.setState({img: medicationImages['acetometophin']})
         }
      }
+   
     render() {        
         // const [text, onChangeText] = React.useState('Useless Text');
         const onPress = () => {
@@ -98,7 +112,9 @@ class MedicationScreen extends React.Component {
           <Card.Title>{this.state.name}</Card.Title>
           <Card.Divider />
           <Text>{this.state.info}</Text>
-          {!this.state.imageLoad && <Image style={{height: '275px', width: '200px', position: 'relative', left: '25%'}}source={require('./Bisacodyl.png')} />}
+          {!this.state.imageLoad && <Image style={{width: '300px', height: '275px', aspectRatio: 1, alignSelf: 'center'}}
+            source={this.state.img}
+            resizeMode="contain"/>}
         </Card>
         </View>
         <TouchableOpacity
