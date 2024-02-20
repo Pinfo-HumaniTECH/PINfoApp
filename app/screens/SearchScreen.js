@@ -38,7 +38,7 @@ class SearchScreen extends React.Component {
             {this.state.imageLoad && <Image style={{height: '275px', width: '200px', position: 'center', left: '40%'}}source={require('./Bisacodyl.png')} />}
             {this.state.imageLoad && 
        <TouchableOpacity
-       style={styles.SubmitButtonSmall}
+       style={styles.SubmitButtonCenter}
        activeOpacity = { .5 }
        onPress={() => {
            medication.save(this.state.search, '')
